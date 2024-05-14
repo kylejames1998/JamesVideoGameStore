@@ -1,3 +1,6 @@
+using JamesVIdeoGameStore.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace JamesVIdeoGameStore
 {
     public class Program
@@ -5,6 +8,10 @@ namespace JamesVIdeoGameStore
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // Add DbContext to the DI container
+            builder.Services.AddDbContext<JamesVGSContext>(options =>
+                options.UseSqlServer("Name=ConnectionStrings:DefaultConnection"));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
