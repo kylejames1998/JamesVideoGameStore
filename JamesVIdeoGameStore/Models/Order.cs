@@ -11,10 +11,10 @@ namespace JamesVIdeoGameStore.Models
         public DateTime OrderDate { get; set; }
 
         [Required]
-        public decimal TotalPrice { get; set; }
+        public int TotalPrice { get; set; }
 
         [Required(ErrorMessage = "Please enter Complete or In-progress.")]
-        public int Status { get; set; }
+        public string Status { get; set; }
 
         // Collection navigation property
         public virtual ICollection<OrderItem>? OrderItems { get; set; }

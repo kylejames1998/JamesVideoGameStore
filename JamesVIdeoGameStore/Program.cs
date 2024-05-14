@@ -9,7 +9,7 @@ namespace JamesVIdeoGameStore
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add DbContext to the DI container
+            // Add the DbContext to the DI container
             builder.Services.AddDbContext<JamesVGSContext>(options =>
                 options.UseSqlServer("Name=ConnectionStrings:DefaultConnection"));
 

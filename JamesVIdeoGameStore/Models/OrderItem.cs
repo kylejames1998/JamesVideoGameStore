@@ -16,7 +16,7 @@ namespace JamesVIdeoGameStore.Models
         [Required]
         public int Quantity { get; set; }
         [Required]
-        public decimal Price { get; set; }
+        public int Price { get; set; }
 
         // Nullable navigation properties
         public virtual Order? Order { get; set; }
