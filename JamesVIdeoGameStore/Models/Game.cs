@@ -5,6 +5,7 @@ namespace JamesVIdeoGameStore.Models
     public class Game
     {
         [Key]
+        [StringLength(10)]
         public int GameId { get; set; }
 
         [Required(ErrorMessage = "Please enter a title")]
@@ -21,7 +22,10 @@ namespace JamesVIdeoGameStore.Models
 
         [Required(ErrorMessage = "Please enter a release date")]
         [DataType(DataType.DateTime)]
-        public string ReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
+
+        // Collection navigation property
+        public virtual ICollection<OrderItem>? OrderItems { get; set; }
 
 
     }

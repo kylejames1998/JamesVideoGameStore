@@ -17,5 +17,8 @@ namespace JamesVIdeoGameStore.Models
 
         [DataType(DataType.DateTime)]
         public DateTime DateJoined { get; set; }
+
+        // Collection navigation property
+        public virtual ICollection<OrderItem>? OrderItems { get; set; }
     }
 }
