@@ -4,8 +4,7 @@ namespace JamesVIdeoGameStore.Models
 {
     public class Game
     {
-        [Key]
-        [StringLength(10)]
+        [Required(ErrorMessage = "Please enter a game ID")]
         public int GameId { get; set; }
 
         [Required(ErrorMessage = "Please enter a title")]

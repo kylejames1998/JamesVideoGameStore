@@ -4,6 +4,7 @@ using JamesVIdeoGameStore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JamesVIdeoGameStore.Migrations
 {
     [DbContext(typeof(JamesVGSContext))]
-    partial class JamesVGSContextModelSnapshot : ModelSnapshot
+    [Migration("20240514172205_DataModelChange3")]
+    partial class DataModelChange3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
