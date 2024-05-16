@@ -11,6 +11,7 @@ namespace JamesVIdeoGameStore.Models
         public DateTime OrderDate { get; set; }
 
         [Required]
+        [Range(0, 100)]
         public int TotalPrice { get; set; }
 
         [Required(ErrorMessage = "Please enter Complete or In-progress.")]
