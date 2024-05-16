@@ -7,11 +7,8 @@ namespace JamesVIdeoGameStore.Models
         [Required]
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(10)]
         public int OrderId { get; set; }
-        [Required]
-        [StringLength(10)]
+        
         public int GameId { get; set; }
         [Required]
         public int Quantity { get; set; }
@@ -21,7 +18,5 @@ namespace JamesVIdeoGameStore.Models
         // Nullable navigation properties
         public virtual Order? Order { get; set; }
         public virtual Game? Game { get; set; }
-        public virtual User? User { get; set; }
-        public virtual Review? Review { get; set; }
     }
 }

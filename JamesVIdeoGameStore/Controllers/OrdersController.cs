@@ -13,6 +13,7 @@ namespace JamesVIdeoGameStore.Controllers
     public class OrdersController : Controller
     {
         private readonly JamesVGSContext _context;
+        private int id;
 
         public OrdersController(JamesVGSContext context)
         {
@@ -22,7 +23,13 @@ namespace JamesVIdeoGameStore.Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
+            ViewBag.Games = from o in _context.Orders
+                            join og in _context.OrderItems on o.OrderId equals og.OrderId
+                            join g in _context.Games on og.GameId equals g.GameId
+                            where o.OrderId == id
+                            select g;
             return View(await _context.Orders.ToListAsync());
+
         }
 
         // GET: Orders/Details/5
@@ -39,6 +46,13 @@ namespace JamesVIdeoGameStore.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.Games = from o in _context.Orders
+                            join og in _context.OrderItems on o.OrderId equals og.OrderId
+                            join g in _context.Games on og.GameId equals g.GameId
+                            where o.OrderId == id
+                            select g;
+
 
             return View(order);
         }

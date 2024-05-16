@@ -43,6 +43,16 @@
             </td>
         </tr>
 }
+
+        <div class="col-md-4">
+            <h4>Games</h4>
+            <ul>
+                @foreach (Game games in ViewBag.Games)
+                {
+                    <li>@games.Title</li>
+                }
+            </ul>
+        </div>
     </tbody>
 </table>
 
