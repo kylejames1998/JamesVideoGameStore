@@ -1,1 +1,1 @@
-# JamesVIdeoGameStore
+# JamesVideoGameStore
