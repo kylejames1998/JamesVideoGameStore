@@ -34,6 +34,7 @@ namespace JamesVIdeoGameStore.Controllers
             return View();
         }
 
+        // Added for naviagation to /Home/About
         public IActionResult About()
         {
             return View();
